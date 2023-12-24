@@ -9,8 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-[Download PDF](http://academicpages.github.io/files/Ahmed_BOUGHDIRI_CV.pdf)
-
 Education
 ======
 * Preparatory Program for entry to French Grandes Écoles d’Ingénieurs, 2018
