@@ -9,11 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
+[Download PDF](http://academicpages.github.io/files/Ahmed_BOUGHDIRI_CV.pdf)
+
 Education
 ======
-* Preparatory Program for entry to French Grandes Écoles d’Ingénieurs, 2016-2018
-* MSc in Computer Science and Mathematics Engineering, 2018 – 2022
-* MSc Computer vision and machine learning, 2021 – 2022
+* Preparatory Program for entry to French Grandes Écoles d’Ingénieurs, 2018
+* MSc in Computer Science and Mathematics Engineering, 2022
+* MSc Computer vision and machine learning, 2022
 
 Work experience
 ======
