@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Finte sample and asymptotic estimators properties in Causal Inference"
+excerpt: "<br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
 
-[book](https://boughdiriahmed.github.io/book/intro.html)
+[epub](https://boughdiriahmed.github.io/book/intro.html)
