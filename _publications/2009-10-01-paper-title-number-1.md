@@ -6,7 +6,7 @@ excerpt: 'Randomized Controlled Trials (RCT) are the current gold standards to e
 date: 2024-10-16
 venue: 'Under review for AISTATS 2025'
 paperurl: 'http://academicpages.github.io/files/2410.12333v1.pdf'
-Co-authors: [Julie Josse](http://juliejosse.com), [Erwan Scornet](https://erwanscornet.github.io)
+Co-authors: '[Julie Josse](http://juliejosse.com), [Erwan Scornet](https://erwanscornet.github.io)'
 ---
 
 [Download paper here](http://academicpages.github.io/files/2410.12333v1.pdf)
