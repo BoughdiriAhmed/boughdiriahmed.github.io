@@ -1,5 +1,5 @@
 ---
-title: Causal alternatives to meta-
+title: "Causal alternatives to meta-
 analysis"
 collection: talks
 type: "Talk"
