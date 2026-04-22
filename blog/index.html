@@ -1,0 +1,25 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<article>
+  <h1>Blog</h1>
+  <p class="subtitle">Projects, notes, and explorations in causal inference and statistics.</p>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+      {% if post.excerpt %}
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+    {% if site.posts.size == 0 %}
+    <li><p>No posts yet. Check back soon.</p></li>
+    {% endif %}
+  </ul>
+</article>
