@@ -6,9 +6,7 @@ excerpt: "How observational studies differ from RCTs and the challenges of confo
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <p>Observational studies are empirical investigations. Unlike randomized controlled trials (RCTs), observational studies refrain from direct intervention or manipulation of variables. Instead, observational studies focus on real-world dynamics, often in fields such as epidemiology, social sciences and economics.</p>
 <p>One of the main differences with randomized controlled trials is the challenge of managing potential confounding variables due to the inherent susceptibility of unmeasured factors to alter observed associations.</p>

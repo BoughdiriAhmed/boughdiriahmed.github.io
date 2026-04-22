@@ -6,9 +6,7 @@ excerpt: "Definitions of statistical models, estimators, and asymptotic theory â
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <section class="level2" data-number="1.1" id="statistical-models">
 <h2 class="anchored" data-anchor-id="statistical-models" data-number="1.1"> Statistical models</h2>

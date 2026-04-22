@@ -6,9 +6,7 @@ excerpt: "The doubly-robust AIPW estimator: combining outcome modelling and prop
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <p>An alternative estimator is the augmented inverse probability weighted estimator (AIPW). It combines both the properties of the regression based estimator and the inverse probability weighted estimator. It is therefore a ‘doubly robust’ method in that it only requires either the propensity or outcome model to be correctly specified but not both. This model holds the same assumptions as the Inverse Probability Weighted Estimator (IPW).</p>
 <p>Here’s a brief overview of how the AIPW estimator works:</p>

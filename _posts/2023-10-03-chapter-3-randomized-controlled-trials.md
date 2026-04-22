@@ -6,9 +6,7 @@ excerpt: "Key assumptions and setup for randomized controlled trials: no interfe
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <p>To get two similar groups of people, the easiest way is to to randomize the treatment assignment. But first several assumptions on the population must be introduced.</p>
 <div class="Assumption" id="Noinference" title="No Interference">

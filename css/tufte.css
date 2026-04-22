@@ -172,7 +172,7 @@ article a:hover, section a:hover { border-bottom-color: var(--green); }
 }
 
 .intro-photo img {
-  width: 280px;
+  width: 160px;
   height: auto;
   border-radius: 2px;
   display: block;
@@ -318,11 +318,13 @@ footer a { color: #bbb; text-decoration: underline; }
   .intro-photo img { width: 110px; }
   .publications-section, .talks-section, .post-list, .section-divider { width: 100%; }
 }
-/* --- Course chapter styles --- */
-.course-chapter {
-  margin-top: 0;
-}
+/* =====================================================
+   Course chapter styles
+   ===================================================== */
 
+.course-chapter { margin-top: 0; }
+
+/* Chapter nav breadcrumb */
 .chapter-nav {
   font-size: 1rem !important;
   color: #888;
@@ -332,60 +334,32 @@ footer a { color: #bbb; text-decoration: underline; }
   margin-bottom: 2rem;
   width: 75% !important;
 }
+.chapter-nav a { color: var(--green) !important; }
 
-.chapter-nav a {
-  color: var(--green) !important;
-}
-
-/* Quarto section styling */
-.course-chapter section {
-  padding-top: 0;
-  padding-bottom: 0;
-}
+/* Section headings */
+.course-chapter section { padding-top: 0; padding-bottom: 0; }
 
 .course-chapter h2 {
-  font-size: 1.9rem;
-  margin-top: 2.5rem;
-  margin-bottom: 0.3rem;
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 3rem;
+  margin-bottom: 0.4rem;
   width: 75%;
 }
 
 .course-chapter h3 {
   font-style: italic;
   font-weight: 400;
-  font-size: 1.5rem;
-  margin-top: 1.8rem;
-  margin-bottom: 0.2rem;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 0.3rem;
   width: 75%;
 }
 
-.course-chapter p {
-  width: 65%;
-}
+.course-chapter p { width: 68%; }
 
-/* Definition / theorem boxes */
-.course-chapter .callout,
-.course-chapter .callout-note,
-.course-chapter .callout-tip,
-.course-chapter .callout-warning,
-.course-chapter div[class*="callout"] {
-  width: 65%;
-  border-left: 3px solid var(--green);
-  background: #f4faf7;
-  padding: 0.8rem 1.2rem;
-  margin: 1.5rem 0;
-  border-radius: 0 4px 4px 0;
-}
-
-.course-chapter .callout-title,
-.course-chapter .callout-header {
-  font-weight: bold;
-  color: var(--green);
-  margin-bottom: 0.3rem;
-  font-size: 1rem;
-}
-
-/* Math display */
+/* Math display blocks */
 .course-chapter .math.display,
 .course-chapter span.math.display {
   display: block;
@@ -393,14 +367,13 @@ footer a { color: #bbb; text-decoration: underline; }
   margin: 1.2rem 0;
 }
 
-/* Tables inside course */
+/* Tables */
 .course-chapter table {
-  width: 65%;
+  width: 68%;
   font-size: 1.1rem;
   border-collapse: collapse;
   margin: 1.5rem 0;
 }
-
 .course-chapter td, .course-chapter th {
   padding: 0.4rem 0.8rem;
   border-bottom: 1px solid var(--border);
@@ -414,22 +387,157 @@ footer a { color: #bbb; text-decoration: underline; }
   padding: 0.2em 0.4em;
   border-radius: 2px;
 }
-
 .course-chapter pre {
   padding: 1rem;
   overflow-x: auto;
-  width: 65%;
+  width: 68%;
   margin: 1rem 0;
 }
 
+/* =====================================================
+   Math block boxes — Definition, Theorem, etc.
+   Each uses a <details> inside with a <summary>
+   ===================================================== */
+
+/* Shared base for all math blocks */
+.course-chapter div.Definition details,
+.course-chapter div.Theorem details,
+.course-chapter div.Proposition details,
+.course-chapter div.Assumption details,
+.course-chapter div.Proof details {
+  width: 70%;
+  margin: 1.6rem 0;
+  border-radius: 4px;
+  padding: 0;
+  font-size: 1.15rem;
+  line-height: 1.8rem;
+}
+
+/* summary (the title bar) */
+.course-chapter div.Definition details summary,
+.course-chapter div.Theorem details summary,
+.course-chapter div.Proposition details summary,
+.course-chapter div.Assumption details summary,
+.course-chapter div.Proof details summary {
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 4px 4px 0 0;
+  user-select: none;
+}
+.course-chapter details summary::-webkit-details-marker { display: none; }
+
+/* Arrow indicator */
+.course-chapter details summary::before {
+  content: "▸";
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.course-chapter details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Content area inside details */
+.course-chapter div.Definition details > div,
+.course-chapter div.Theorem details > div,
+.course-chapter div.Proposition details > div,
+.course-chapter div.Assumption details > div,
+.course-chapter div.Proof details > div {
+  padding: 0.8rem 1.2rem 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.course-chapter div.Definition details > div p,
+.course-chapter div.Theorem details > div p,
+.course-chapter div.Proposition details > div p,
+.course-chapter div.Assumption details > div p,
+.course-chapter div.Proof details > div p { width: 100%; }
+
+.course-chapter div.Definition details > div ul,
+.course-chapter div.Theorem details > div ul,
+.course-chapter div.Proposition details > div ul { width: 100%; }
+
+/* --- Definition: green --- */
+.course-chapter div.Definition details {
+  border: 1.5px solid #74c69d;
+  background: #f0faf4;
+}
+.course-chapter div.Definition details summary {
+  background: #d8f3dc;
+  color: #1b4332;
+  font-weight: bold;
+}
+
+/* --- Theorem: deep blue --- */
+.course-chapter div.Theorem details {
+  border: 1.5px solid #90c2e7;
+  background: #f0f6fc;
+}
+.course-chapter div.Theorem details summary {
+  background: #d0e8f7;
+  color: #1a3a5c;
+  font-weight: bold;
+}
+
+/* --- Proposition: soft teal --- */
+.course-chapter div.Proposition details {
+  border: 1.5px solid #76c8c8;
+  background: #f0fafa;
+}
+.course-chapter div.Proposition details summary {
+  background: #d0eeee;
+  color: #1a4040;
+  font-weight: bold;
+}
+
+/* --- Assumption: amber --- */
+.course-chapter div.Assumption details {
+  border: 1.5px solid #f0b429;
+  background: #fffbf0;
+}
+.course-chapter div.Assumption details summary {
+  background: #fff0c0;
+  color: #7a4f00;
+  font-weight: bold;
+}
+
+/* --- Proof: grey, collapsed by default --- */
+.course-chapter div.Proof details {
+  border: 1.5px solid #ccc;
+  background: #fafafa;
+}
+.course-chapter div.Proof details summary {
+  background: #efefef;
+  color: #444;
+  font-style: italic;
+}
+
+/* Force proofs to be closed by default via CSS hint
+   (actual open/close is controlled by HTML `open` attr — 
+    we override visually with a note) */
+.course-chapter div.Proof details:not([open]) > div { display: none; }
+
+/* =====================================================
+   Responsive
+   ===================================================== */
 @media (max-width: 760px) {
   .course-chapter p,
   .course-chapter h2,
   .course-chapter h3,
   .course-chapter pre,
   .course-chapter table,
-  .chapter-nav,
-  .course-chapter div[class*="callout"] { width: 100% !important; }
+  .chapter-nav { width: 100% !important; }
+
+  .course-chapter div.Definition details,
+  .course-chapter div.Theorem details,
+  .course-chapter div.Proposition details,
+  .course-chapter div.Assumption details,
+  .course-chapter div.Proof details { width: 100%; }
 }
 
 /* --- Course listing on blog index --- */

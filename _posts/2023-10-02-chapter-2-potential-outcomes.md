@@ -6,9 +6,7 @@ excerpt: "The Neyman-Rubin potential outcomes framework and the fundamental prob
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <section class="level2" data-number="2.1" id="potential-outcomes">
 <h2 class="anchored" data-anchor-id="potential-outcomes" data-number="2.1"> Potential outcomes</h2>

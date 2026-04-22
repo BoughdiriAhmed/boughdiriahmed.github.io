@@ -6,9 +6,7 @@ excerpt: "Oracle and estimated IPW estimators, their asymptotic properties, and 
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <p>A first way to understand the Inverse Propensity Weighting (IPW) is to understand what the oracle IPW. Let us say that we somehow found a way to predict perfectly $ x X()$ the propensity score <span class="math inline">\(e(x)\)</span>. Then we can define the Oracle Inverse Propensity Weighting estimator as:</p>
 <div class="Definition" id="oracle-inverse-propensity-weighting-estimator" title="Oracle Inverse Propensity Weighting estimator">

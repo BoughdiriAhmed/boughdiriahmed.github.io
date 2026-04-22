@@ -6,9 +6,7 @@ excerpt: "Horvitz-Thomson, Hajek, regression-based and doubly-robust estimators 
 ---
 
 <div class="course-chapter">
-<p class="chapter-nav">
-  Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a>
-</p>
+<p class="chapter-nav">Course: <a href="/blog/">Finite Sample and Asymptotic Estimators in Causal Inference</a></p>
 
 <p>Now that we have defiend the framework and the assumptions under which we are working. We can build estimators of the average treatment effect.</p>
 <section class="level2" data-number="4.1" id="horvitz-thomson-estimator">
