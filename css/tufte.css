@@ -63,7 +63,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: var(--green);
+  background-color: transparent;
   color: white;
   font-family: "et-book", Georgia, serif;
   font-size: 1.1rem;
@@ -74,7 +74,8 @@ body {
   flex-shrink: 0;
   transition: background-color 0.15s;
 }
-.site-badge:hover { background-color: var(--green-hover); border-bottom: none; }
+.site-badge:hover { background-color: transparent; border-bottom: none; opacity: 0.8; }
+.site-badge img { width: 80px; height: 80px; }
 
 .site-nav { display: flex; gap: 2rem; align-items: center; }
 
