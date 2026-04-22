@@ -172,7 +172,7 @@ article a:hover, section a:hover { border-bottom-color: var(--green); }
 }
 
 .intro-photo img {
-  width: 220px;
+  width: 280px;
   height: auto;
   border-radius: 2px;
   display: block;
