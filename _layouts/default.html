@@ -3,35 +3,31 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="{{ '/css/tufte.css' | relative_url }}">
   {% if site.mathjax %}
   <script>
-    MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
+    MathJax = { tex: { inlineMath: [['$','$']] }, svg: { fontCache: 'global' } };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
   {% endif %}
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Ahmed Boughdiri</a>
-      <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
-      <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About & CV</a>
-    </nav>
-  </header>
-  <main>
-    {{ content }}
-  </main>
+  <a href="{{ '/' | relative_url }}" class="site-badge">
+    <img src="{{ '/assets/img/badge_1.png' | relative_url }}" alt="AB">
+  </a>
+
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}">About</a>
+    <a href="{{ '/blog/' | relative_url }}">blog</a>
+  </nav>
+
+  {{ content }}
+
   <footer>
-    <p>
-      Ahmed Boughdiri · Montpellier/Paris, France ·
-      <a href="https://github.com/BoughdiriAhmed">GitHub</a>
-    </p>
+    <hr>
+    <p>&copy; {{ 'now' | date: "%Y" }} &nbsp; AHMED BOUGHDIRI<br>
+    This site created with the <a href="https://github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging</a> in <a href="https://jekyllrb.com">Jekyll</a>.</p>
   </footer>
 </body>
 </html>
