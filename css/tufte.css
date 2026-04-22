@@ -359,6 +359,20 @@ footer a { color: #bbb; text-decoration: underline; }
 
 .course-chapter p { width: 68%; }
 
+/* Uniform text size for all content */
+.course-chapter p,
+.course-chapter li,
+.course-chapter td,
+.course-chapter th,
+.course-chapter div.Definition details > div,
+.course-chapter div.Theorem details > div,
+.course-chapter div.Proposition details > div,
+.course-chapter div.Assumption details > div,
+.course-chapter div.Proof details > div {
+  font-size: 1.35rem;
+  line-height: 2rem;
+}
+
 /* Math display blocks */
 .course-chapter .math.display,
 .course-chapter span.math.display {
@@ -413,7 +427,7 @@ footer a { color: #bbb; text-decoration: underline; }
   line-height: 1.8rem;
 }
 
-/* summary (the title bar) */
+/* summary (the title bar) — shared */
 .course-chapter div.Definition details summary,
 .course-chapter div.Theorem details summary,
 .course-chapter div.Proposition details summary,
@@ -421,7 +435,6 @@ footer a { color: #bbb; text-decoration: underline; }
 .course-chapter div.Proof details summary {
   padding: 0.6rem 1rem;
   font-size: 1.1rem;
-  cursor: pointer;
   list-style: none;
   display: flex;
   align-items: center;
@@ -431,15 +444,27 @@ footer a { color: #bbb; text-decoration: underline; }
 }
 .course-chapter details summary::-webkit-details-marker { display: none; }
 
-/* Arrow indicator */
-.course-chapter details summary::before {
+/* Only Proof is clickable/collapsible */
+.course-chapter div.Proof details summary {
+  cursor: pointer;
+}
+.course-chapter div.Proof details summary::before {
   content: "▸";
   font-size: 0.8rem;
   transition: transform 0.2s;
   flex-shrink: 0;
 }
-.course-chapter details[open] summary::before {
+.course-chapter div.Proof details[open] summary::before {
   transform: rotate(90deg);
+}
+
+/* Definition/Theorem/Proposition/Assumption — not collapsible, no arrow */
+.course-chapter div.Definition details summary,
+.course-chapter div.Theorem details summary,
+.course-chapter div.Proposition details summary,
+.course-chapter div.Assumption details summary {
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Content area inside details */
