@@ -1,6 +1,5 @@
 /* =============================================================
-   tufte.css — Ahmed Boughdiri personal site
-   Based on tufte-css (Dave Liepmann) + clayh53/tufte-jekyll
+   tufte.css — Ahmed Boughdiri · Dark green theme
    ============================================================= */
 
 @charset "UTF-8";
@@ -25,41 +24,62 @@
   font-style: normal;
 }
 
-/* --- Base --- */
-html {
-  font-size: 15px;
+/* --- Variables --- */
+:root {
+  --green: #2d6a4f;
+  --green-light: #40916c;
+  --green-hover: #1b4332;
+  --bg: #fffff8;
+  --text: #111;
+  --muted: #666;
+  --border: #ddd;
 }
+
+/* --- Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 15px; }
 
 body {
-  font-family: "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  background-color: #fffff8;
-  color: #111;
+  font-family: "et-book", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  background-color: var(--bg);
+  color: var(--text);
   margin: 0;
   padding: 0;
-  counter-reset: sidenote-counter;
 }
 
-/* --- Badge (top-left circle logo) --- */
+/* --- Badge (text initials, top-left) --- */
 .site-badge {
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  left: 1.2rem;
   z-index: 100;
-  display: block;
-  width: 60px;
-  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--green);
+  color: white;
+  font-family: "et-book", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: background-color 0.15s;
 }
 
-.site-badge img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.site-badge:hover {
+  background-color: var(--green-hover);
+  text-decoration: none;
+  border-bottom: none;
 }
 
 /* --- Nav --- */
 .site-nav {
   position: fixed;
-  top: 1.2rem;
+  top: 1.35rem;
   left: 5rem;
   z-index: 100;
   display: flex;
@@ -69,280 +89,328 @@ body {
 
 .site-nav a {
   font-family: "et-book", Georgia, serif;
-  font-size: 1rem;
-  color: #111;
+  font-size: 1.05rem;
+  color: var(--text);
   text-decoration: none;
+  border-bottom: none;
+  letter-spacing: 0.03em;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+  color: var(--green);
   border-bottom: none;
 }
 
-.site-nav a:hover {
-  text-decoration: underline;
-}
-
-/* --- Main content area --- */
+/* --- Page wrapper --- */
 article, section {
-  margin-top: 5rem;
+  margin-top: 5.5rem;
   margin-left: auto;
   margin-right: auto;
   width: 87.5%;
   max-width: 1400px;
   padding: 0 2rem 4rem;
-  position: relative;
-}
-
-/* Tufte-style: body text in left ~55%, right side for margin notes */
-article > p,
-article > ul,
-article > ol,
-article > blockquote,
-article > h1,
-article > h2,
-article > h3,
-article > table,
-section > p,
-section > ul,
-section > ol,
-section > h1,
-section > h2,
-section > h3,
-section > table,
-.intro-block,
-.publications-section,
-.talks-section {
-  width: 55%;
 }
 
 /* --- Typography --- */
 h1 {
   font-weight: 400;
   font-size: 3.2rem;
-  line-height: 1;
+  line-height: 1.05;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 60%;
 }
 
 h2 {
   font-style: italic;
   font-weight: 400;
-  margin-top: 2.5rem;
-  font-size: 2.2rem;
-  line-height: 1;
-}
-
-h3 {
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.7rem;
-  margin-top: 2rem;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  width: 60%;
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 2rem;
-  margin-top: 1.4rem;
+  margin-top: 1.2rem;
   margin-bottom: 0;
-  padding-right: 0;
-  vertical-align: baseline;
+  width: 55%;
 }
 
 p.subtitle {
   font-style: italic;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   display: block;
   line-height: 1;
+  margin-top: 0.8rem;
+  width: 55%;
+}
+
+ul, ol {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  width: 55%;
+  padding-left: 1.5rem;
 }
 
 /* --- Links --- */
-a {
-  color: inherit;
-  text-decoration: none;
-  background: none;
-}
+a { color: inherit; text-decoration: none; border-bottom: none; }
 
-a:link { color: inherit; }
-
+/* Green for all clickable things in content */
 article a, section a {
-  text-decoration: none;
-  border-bottom: 1px solid #aaa;
+  color: var(--green);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.1s;
 }
 
 article a:hover, section a:hover {
-  border-bottom-color: #111;
+  border-bottom-color: var(--green);
 }
 
-/* --- Profile / intro block --- */
+/* --- Section divider --- */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0 2rem;
+  width: 60%;
+}
+
+/* --- Intro block (photo + bio) --- */
 .intro-block {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  width: 75%;
 }
 
 .intro-block img {
-  width: 160px;
+  width: 155px;
   height: auto;
   flex-shrink: 0;
   border-radius: 2px;
 }
 
-.intro-text p {
+.intro-block .intro-text p {
   margin-top: 0.8rem;
+  width: 100%;
+}
+
+/* --- Social links row --- */
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--green) !important;
+  border-bottom: 1px solid transparent !important;
+  padding: 0.3rem 0;
+}
+
+.social-links a:hover {
+  border-bottom-color: var(--green) !important;
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--green);
+  flex-shrink: 0;
 }
 
 /* --- Publications table --- */
 .publications-section {
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   width: 80%;
 }
 
-.publications-section table {
+.publications-section h2,
+.talks-section h2 {
+  width: 100%;
+}
+
+.publications-section table,
+.talks-section table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1.2rem;
-  line-height: 1.7rem;
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
 }
 
-.publications-section td {
-  padding: 0.6rem 0.8rem 0.6rem 0;
+.publications-section td,
+.talks-section td {
+  padding: 0.55rem 0.8rem 0.55rem 0;
   vertical-align: top;
+  border-top: 1px solid var(--border);
 }
 
-.publications-section td:first-child {
+.publications-section td:first-child,
+.talks-section td:first-child {
   white-space: nowrap;
   font-style: italic;
-  color: #555;
+  color: var(--muted);
   padding-right: 1.5rem;
-  width: 3rem;
+  width: 3.5rem;
+  font-size: 1rem;
 }
 
-.publications-section td strong a {
-  border-bottom: 1px solid #aaa;
-  font-size: 1.2rem;
+.pub-title {
+  font-weight: bold;
+  font-size: 1.15rem;
 }
 
-.publications-section td .pub-venue {
+.pub-title a {
+  color: var(--green) !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+.pub-title a:hover {
+  border-bottom-color: var(--green) !important;
+}
+
+.pub-authors {
+  color: #444;
+  font-size: 1rem;
+}
+
+.pub-venue {
   font-style: italic;
-  color: #555;
+  color: var(--muted);
+  font-size: 1rem;
 }
 
-.publications-section td .pub-type {
-  color: #888;
+/* --- Type badges --- */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  border: 1px solid;
+}
+
+.badge-conference {
+  background: #d8f3dc;
+  color: #1b4332;
+  border-color: #74c69d;
+}
+
+.badge-preprint {
+  background: #fff3cd;
+  color: #856404;
+  border-color: #ffc107;
+}
+
+.badge-workshop {
+  background: #e2d9f3;
+  color: #4a235a;
+  border-color: #9b59b6;
 }
 
 /* --- Talks section --- */
 .talks-section {
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   width: 80%;
 }
 
-.talks-section table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.2rem;
-  line-height: 1.7rem;
+.talk-title {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.talks-section td {
-  padding: 0.6rem 0.8rem 0.6rem 0;
-  vertical-align: top;
+.talk-title a {
+  color: var(--green) !important;
 }
 
-.talks-section td:first-child {
-  white-space: nowrap;
+.talk-meta {
+  color: var(--muted);
+  font-size: 1rem;
   font-style: italic;
-  color: #555;
-  padding-right: 1.5rem;
-  width: 4rem;
 }
 
-/* --- Blog post list --- */
+/* --- Blog / post list --- */
 .post-list {
-  margin-top: 2rem;
-  width: 55%;
+  margin-top: 1rem;
+  width: 60%;
   list-style: none;
   padding: 0;
 }
 
 .post-list li {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border);
   padding: 1.2rem 0;
 }
 
 .post-list li:last-child {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border);
 }
 
 .post-list .post-title {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-style: italic;
   display: block;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
+  color: var(--green);
 }
 
 .post-list .post-date {
-  font-size: 1rem;
-  color: #888;
+  font-size: 0.95rem;
+  color: var(--muted);
   display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .post-list .post-excerpt {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #444;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
 }
 
 /* --- Post content --- */
-section h1 {
-  width: 55%;
-}
-
-section p, section ul, section ol {
-  width: 55%;
-}
+section > h1 { width: 60%; }
+section > p, section > ul, section > ol { width: 58%; }
 
 /* --- Footer --- */
 footer {
   width: 87.5%;
   margin: 0 auto;
-  padding: 1rem 2rem 3rem;
-  font-size: 1rem;
+  padding: 0.5rem 2rem 3rem;
+  font-size: 0.95rem;
   color: #aaa;
 }
 
 footer hr {
   border: none;
-  border-top: 1px solid #ddd;
-  margin-bottom: 1rem;
+  border-top: 1px solid var(--border);
+  margin-bottom: 0.8rem;
 }
 
-footer a {
-  color: #aaa;
-  text-decoration: underline;
-}
+footer a { color: #aaa; text-decoration: underline; }
 
 /* --- Responsive --- */
 @media (max-width: 760px) {
-  .site-badge { width: 45px; height: 45px; }
-  .site-badge img { width: 45px; height: 45px; }
-  .site-nav { left: 4rem; top: 1rem; }
-
+  .site-badge { width: 42px; height: 42px; font-size: 0.95rem; }
+  .site-nav { left: 3.8rem; top: 1rem; }
   article, section { margin-top: 4rem; padding: 0 1rem 3rem; width: 100%; }
-
-  article > p, article > h1, article > h2, article > h3,
-  article > ul, article > ol, article > table,
-  section > p, section > h1, section > h2, section > h3,
-  section > ul, section > ol, section > table,
-  .intro-block, .publications-section, .talks-section,
-  .post-list, section h1, section p, section ul, section ol {
-    width: 100%;
-  }
-
+  h1, h2, p, ul, ol, .intro-block, .publications-section,
+  .talks-section, .post-list, .section-divider { width: 100% !important; }
   .intro-block { flex-direction: column; gap: 1rem; }
-  .intro-block img { width: 120px; }
+  .intro-block img { width: 110px; }
   h1 { font-size: 2.2rem; }
-  p { font-size: 1.2rem; line-height: 1.8rem; }
+  p { font-size: 1.15rem; line-height: 1.8rem; }
 }

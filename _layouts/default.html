@@ -7,27 +7,25 @@
   <link rel="stylesheet" href="{{ '/css/tufte.css' | relative_url }}">
   {% if site.mathjax %}
   <script>
-    MathJax = { tex: { inlineMath: [['$','$']] }, svg: { fontCache: 'global' } };
+    MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] }, svg: { fontCache: 'global' } };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
   {% endif %}
 </head>
 <body>
-  <a href="{{ '/' | relative_url }}" class="site-badge">
-    <img src="{{ '/assets/img/badge_1.png' | relative_url }}" alt="AB">
-  </a>
+  <a href="{{ '/' | relative_url }}" class="site-badge">AB</a>
 
   <nav class="site-nav">
-    <a href="{{ '/' | relative_url }}">About</a>
-    <a href="{{ '/blog/' | relative_url }}">blog</a>
+    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>About</a>
+    <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' or page.url contains '/articles' %}class="active"{% endif %}>blog</a>
   </nav>
 
   {{ content }}
 
   <footer>
     <hr>
-    <p>&copy; {{ 'now' | date: "%Y" }} &nbsp; AHMED BOUGHDIRI<br>
-    This site created with the <a href="https://github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging</a> in <a href="https://jekyllrb.com">Jekyll</a>.</p>
+    <p>&copy; {{ 'now' | date: "%Y" }} &nbsp; AHMED BOUGHDIRI &nbsp;·&nbsp;
+    This site created with the <a href="https://github.com/clayh53/tufte-jekyll">Tufte theme</a> in <a href="https://jekyllrb.com">Jekyll</a>.</p>
   </footer>
 </body>
 </html>

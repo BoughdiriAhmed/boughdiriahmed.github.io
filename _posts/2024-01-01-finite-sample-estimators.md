@@ -8,12 +8,6 @@ This post covers an exploration of finite-sample and asymptotic properties of es
 
 ## Motivation
 
-Standard asymptotic guarantees tell us that well-specified estimators converge to their true values as $n \to \infty$. But in practice, sample sizes are finite — often small — and the gap between finite-sample and asymptotic behavior can be substantial.
-
-## Key questions
-
-- How quickly do doubly-robust estimators achieve their asymptotic distributions?
-- Does the choice of causal measure (RD vs RR vs OR) affect finite-sample bias and variance differently?
-- Under what conditions do weighting-based estimators dominate outcome-modeling in small samples?
+Standard asymptotic guarantees tell us that well-specified estimators converge to their true values as $n \to \infty$. But in practice, sample sizes are finite and the gap between finite-sample and asymptotic behavior can be substantial.
 
 For more detail, see the related paper: [Quantifying Treatment Effects: Estimating Risk Ratios in Causal Inference](https://arxiv.org/abs/2410.12333).

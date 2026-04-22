@@ -10,7 +10,6 @@ permalink: /blog/
   <ul class="post-list">
     {% for post in site.posts %}
     <li>
-      <hr>
       <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
       {% if post.excerpt %}
@@ -19,7 +18,7 @@ permalink: /blog/
     </li>
     {% endfor %}
     {% if site.posts.size == 0 %}
-    <li><p>No posts yet.</p></li>
+    <li><p style="color:#888; font-style:italic;">No posts yet.</p></li>
     {% endif %}
   </ul>
 </section>
