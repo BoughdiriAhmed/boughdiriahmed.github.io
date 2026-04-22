@@ -318,3 +318,174 @@ footer a { color: #bbb; text-decoration: underline; }
   .intro-photo img { width: 110px; }
   .publications-section, .talks-section, .post-list, .section-divider { width: 100%; }
 }
+/* --- Course chapter styles --- */
+.course-chapter {
+  margin-top: 0;
+}
+
+.chapter-nav {
+  font-size: 1rem !important;
+  color: #888;
+  font-style: italic;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.8rem;
+  margin-bottom: 2rem;
+  width: 75% !important;
+}
+
+.chapter-nav a {
+  color: var(--green) !important;
+}
+
+/* Quarto section styling */
+.course-chapter section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.course-chapter h2 {
+  font-size: 1.9rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.3rem;
+  width: 75%;
+}
+
+.course-chapter h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.2rem;
+  width: 75%;
+}
+
+.course-chapter p {
+  width: 65%;
+}
+
+/* Definition / theorem boxes */
+.course-chapter .callout,
+.course-chapter .callout-note,
+.course-chapter .callout-tip,
+.course-chapter .callout-warning,
+.course-chapter div[class*="callout"] {
+  width: 65%;
+  border-left: 3px solid var(--green);
+  background: #f4faf7;
+  padding: 0.8rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.course-chapter .callout-title,
+.course-chapter .callout-header {
+  font-weight: bold;
+  color: var(--green);
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+/* Math display */
+.course-chapter .math.display,
+.course-chapter span.math.display {
+  display: block;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
+
+/* Tables inside course */
+.course-chapter table {
+  width: 65%;
+  font-size: 1.1rem;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.course-chapter td, .course-chapter th {
+  padding: 0.4rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Code */
+.course-chapter pre, .course-chapter code {
+  font-family: "Lucida Console", monospace;
+  font-size: 0.9rem;
+  background: #f4f4f0;
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
+}
+
+.course-chapter pre {
+  padding: 1rem;
+  overflow-x: auto;
+  width: 65%;
+  margin: 1rem 0;
+}
+
+@media (max-width: 760px) {
+  .course-chapter p,
+  .course-chapter h2,
+  .course-chapter h3,
+  .course-chapter pre,
+  .course-chapter table,
+  .chapter-nav,
+  .course-chapter div[class*="callout"] { width: 100% !important; }
+}
+
+/* --- Course listing on blog index --- */
+.course-listing {
+  width: 70%;
+  margin-bottom: 2.5rem;
+}
+
+.course-listing h2 {
+  font-size: 1.8rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.course-listing > p {
+  width: 100%;
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  counter-reset: chapter-counter;
+}
+
+.chapter-list li {
+  border-top: 1px solid var(--border);
+  padding: 0.7rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chapter-list li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.chapter-list a {
+  color: var(--green) !important;
+  font-style: italic;
+  border-bottom: 1px solid transparent !important;
+  white-space: nowrap;
+}
+
+.chapter-list a:hover {
+  border-bottom-color: var(--green) !important;
+}
+
+.chapter-excerpt {
+  font-size: 1rem;
+  color: #888;
+  font-style: normal;
+}
